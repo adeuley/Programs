@@ -1,0 +1,9 @@
+C:\A-Data\Programs\DeployAddIns\DeployAddIns\bin\Debug\DeployAddIns.exe.config
+C:\A-Data\Programs\DeployAddIns\DeployAddIns\bin\Debug\DeployAddIns.exe
+C:\A-Data\Programs\DeployAddIns\DeployAddIns\bin\Debug\DeployAddIns.pdb
+C:\A-Data\Programs\DeployAddIns\DeployAddIns\obj\Debug\DeployAddIns.csprojResolveAssemblyReference.cache
+C:\A-Data\Programs\DeployAddIns\DeployAddIns\obj\Debug\DeployAddIns.DeployDialogue.resources
+C:\A-Data\Programs\DeployAddIns\DeployAddIns\obj\Debug\DeployAddIns.Properties.Resources.resources
+C:\A-Data\Programs\DeployAddIns\DeployAddIns\obj\Debug\DeployAddIns.csproj.GenerateResource.Cache
+C:\A-Data\Programs\DeployAddIns\DeployAddIns\obj\Debug\DeployAddIns.exe
+C:\A-Data\Programs\DeployAddIns\DeployAddIns\obj\Debug\DeployAddIns.pdb
