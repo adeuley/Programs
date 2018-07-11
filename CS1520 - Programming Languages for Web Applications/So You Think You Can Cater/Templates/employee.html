@@ -1,0 +1,71 @@
+{% extends "parent.html" %}
+
+{% block login %}
+<li style="float:right"><a class="active" href="{{ url_for('logout') }}">Logout</a></li>
+{% endblock %}
+
+{% block section1 %}
+<div id = "currentEvents">
+    <h1>Currently Booked Event</h1>
+    {% if events %}
+   <table style="width:75%">
+        <col width=25%>
+        <col width=25%>
+        <col width=25%>
+        <col width=25%>
+
+        <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Client</th>
+            <th>Remove</th>
+        </tr>
+        {% for event in events %}
+        <tr>
+            <td class="value">{{ event.date.strftime("%m/%d/%Y")  }}</td>
+            <td class="value">{{ event.description }}</td>
+            {% for u in event.users %}
+                {% if u.role=='C' %}
+                    <td class="value">{{ u.username }}</td>
+                {% endif %}
+            {% endfor %}
+            <td class="value"><a href="{{ url_for('employee',eventId=event.id,meth='r') }}">Click to remove event</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block section2 %}
+<div id = "availableEvents">
+    <h1>Available Event</h1>
+    {% if availableEvents %}
+    <table style="width:75%">
+         <col width=20%>
+        <col width=25%>
+        <col width=25%>
+        <col width=30%>
+
+        <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Client</th>
+            <th>Work Event?</th>
+        </tr>
+        {% for event in availableEvents %}
+        <tr>
+            <td class="value">{{ event.date.strftime("%m/%d/%Y")  }}</td>
+            <td class="value">{{ event.description }}</td>
+            {% for u in event.users %}
+                {% if u.role=='C' %}
+                    <td class="value">{{ u.username }}</td>
+                {% endif %}
+            {% endfor %}
+            <td class="value"><a href="{{ url_for('employee',eventId=event.id,meth='a') }}">Click to work event</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+{% endblock %}

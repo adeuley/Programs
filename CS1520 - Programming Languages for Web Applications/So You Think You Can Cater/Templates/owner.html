@@ -1,0 +1,104 @@
+{% extends "parent.html" %}
+
+{% block navigation %}
+<li><a href="{{ url_for('addEmployee') }}">Add Staff</a></li>
+
+{% endblock %}
+
+{% block login %}
+<li style="float:right"><a class="active" href="{{ url_for('logout') }}">Logout</a></li>
+{% endblock %}
+
+{% block section1 %}
+<div id = "noStaffEvents">
+    <h1>Events With No Staff</h1>
+
+    {% if noEvents %}
+    <table style="width:75%">
+        <col width=5%>
+        <col width=20%>
+        <col width=15%>
+        <col width=15%>
+        <col width=15%>
+        <col width=15%>
+        <col width=15%>
+
+        <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Client</th>
+            <th colspan="3">Staff</th>
+            </tr>
+        {% for event in noEvents %}
+        <tr>
+            <td class="value">{{ event.date.strftime("%m/%d/%Y")  }}</td>
+            <td class="value">{{ event.description }}</td>
+            {% for u in event.users %}
+                {% if u.role=='C' %}
+                    <td class="value">{{ u.username }}</td>
+                {% endif %}
+            {% endfor %}
+            {% for u in event.users %}
+                {% if u.role=='E' %}
+                    <td class="value">{{ u.username }}</td>
+                {% endif %}
+            {% endfor %}
+            {% for x in range(0,3-event.employeeCount) %}
+
+                <td class="value">-</td>
+            {% endfor %}
+         </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p> There are no events without enough staff! </p>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block section2 %}
+<div id = "allEvents">
+    <h1>All Events</h1>
+
+    {% if events %}
+    <table style="width:75%">
+        <col width=5%>
+        <col width=20%>
+        <col width=15%>
+        <col width=20%>
+        <col width=20%>
+        <col width=20%>
+        <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Client</th>
+            <th colspan="3">Staff</th>
+        </tr>
+        {% for event in events %}
+            {% if event.employeeCount > 0 %}
+                <tr>
+                    <td class="value">{{ event.date.strftime("%m/%d/%Y")  }}</td>
+                    <td class="value">{{ event.description }}</td>
+                    {% for u in event.users %}
+                        {% if u.role=='C' %}
+                            <td class="value">{{ u.username }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    {% for u in event.users %}
+                        {% if u.role=='E' %}
+                            <td class="value">{{ u.username }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    {% for x in range(0,3-event.employeeCount) %}
+
+                        <td class="value">-</td>
+                    {% endfor %}
+                 </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+    {% else %}
+    <p> There are no events scheduled! </p>
+    {% endif %}
+</div>
+{% endblock %}

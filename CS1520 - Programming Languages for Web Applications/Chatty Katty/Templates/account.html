@@ -1,0 +1,45 @@
+{% extends "parent.html" %}
+
+{% block login %}
+<li style="float:right"><a class="active" href="{{ url_for('logout') }}">Logout</a></li>
+{% endblock %}
+
+{% block section1 %}
+<div id = "userRooms">
+    <h1>{{ user.username}}'s chatrooms</h1>
+    {% if uRooms %}
+   <table style="width:75%">
+        <col width=50%>
+        <col width=50%>
+
+        <tr>
+            <th>Name</th>
+            <th>Delete</th>
+        </tr>
+        {% for room in uRooms %}
+        <tr>
+            <td class="value"><a href="{{ url_for('room',id=room.id) }}">{{ Room.name }}</a></td>
+            <td class="value"><a href="{{ url_for('account',id=user.id) }}">Click to delete room</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block section2 %}
+<div id = "allRooms">
+    <h1>All Chat rooms</h1>
+    {% if availableEvents %}
+    <table style="width:75%">
+         <col width=100%>
+
+        {% for room in aRooms %}
+        <tr>
+           <td class="value"><a href="{{ url_for('room',id=room.id) }}">{{ room.name }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "parent.html" %}
+
+{% block login %}
+<li style="float:right"><a class="active" href="{{ url_for('logout') }}">Logout</a></li>
+{% endblock %}
+
+{% block section1 %}
+<div id = "dateSelection">
+    {% if booked %}
+        <p>Date is already booked. Please select a different one</p>
+    {% endif %}.
+    <form action="" method="post">
+			Description:  <input type="text" name="description" />
+			<br />
+			Select a Date:  <input type="date" name="date" />
+			<br />
+			<input type="submit" value="submit" />
+    </form>
+</div>
+{% endblock %}
+
+{% block section2 %}
+<div id = "currentEvents">
+    <h1>Currently Booked Event</h1>
+    {% if events %}
+    <table style="width:75%">
+        <col width=25%>
+        <col width=25%>
+        <col width=25%>
+        <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Cancel</th>
+        </tr>
+        {% for event in events %}
+        <tr>
+            <td class="value">{{ event.date.strftime("%m/%d/%Y") }}</td>
+            <td class="value">{{ event.description }}</td>
+            <td class="value"><a href="{{ url_for('client',eventId=event.id,cancel=True) }}">Click to cancel event</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+{% endblock %}

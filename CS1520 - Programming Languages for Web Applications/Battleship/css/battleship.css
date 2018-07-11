@@ -1,0 +1,27 @@
+table{
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 400px;
+	height: 400px;
+	background-color: aqua;
+}
+
+
+
+td{
+	border: 1px solid black;
+	text-align:center;
+	
+}
+
+.hit{
+	background-color: red;
+}
+
+.miss{
+	background-color: white;
+}
+
+.hidden{
+	display: none;
+}

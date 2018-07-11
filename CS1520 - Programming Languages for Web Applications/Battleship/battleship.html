@@ -1,0 +1,24 @@
+<DOCTYPE!html>
+<html>
+	<head>
+		<title>Battelship</title>
+		<script type='text/javascript' src="scripts/main.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/battleship.css"> 
+	</head>
+	<body>
+		<h1 id = "Title">Battleship</h1>
+		
+		<div id = "Buttons">
+			<button id="Start Button" onclick="StartGame();">Click to Start Game</button>
+			<button id="Score Button" onclick="ShowScore();">Click to see top scores</button>
+		</div>
+		<div id= "Scores"></div>
+		</br>
+		<div id="PlayersShots"></div>
+		</br>
+		<div id="PlayersBoard"></div>	
+		<div id="Scripts">
+			<script>CreateBoard('PlayersShots',false,0);</script>
+		</div>
+	</body>
+</html>

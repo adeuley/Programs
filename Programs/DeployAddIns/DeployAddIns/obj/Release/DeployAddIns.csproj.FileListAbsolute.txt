@@ -1,9 +1,0 @@
-C:\A-Data\Programs\DeployAddIns\DeployAddIns\bin\Release\DeployAddIns.exe.config
-C:\A-Data\Programs\DeployAddIns\DeployAddIns\bin\Release\DeployAddIns.exe
-C:\A-Data\Programs\DeployAddIns\DeployAddIns\bin\Release\DeployAddIns.pdb
-C:\A-Data\Programs\DeployAddIns\DeployAddIns\obj\Release\DeployAddIns.DeployDialogue.resources
-C:\A-Data\Programs\DeployAddIns\DeployAddIns\obj\Release\DeployAddIns.Properties.Resources.resources
-C:\A-Data\Programs\DeployAddIns\DeployAddIns\obj\Release\DeployAddIns.csproj.GenerateResource.Cache
-C:\A-Data\Programs\DeployAddIns\DeployAddIns\obj\Release\DeployAddIns.exe
-C:\A-Data\Programs\DeployAddIns\DeployAddIns\obj\Release\DeployAddIns.pdb
-C:\A-Data\Programs\DeployAddIns\DeployAddIns\obj\Release\DeployAddIns.csprojResolveAssemblyReference.cache

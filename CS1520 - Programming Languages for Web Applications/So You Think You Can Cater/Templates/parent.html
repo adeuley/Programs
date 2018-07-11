@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='catering.css') }}">
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Chatty Katty</title>
+    </head>
+    <body>
+        <h1>Chatty Katty</h1>
+        <ul>
+            {% block navigation %}
+
+            {% endblock %}
+            {% block login %}
+            <li style="float:right"><a class="active" href="{{ url_for('login') }}">Login</a></li>
+            {% endblock %}
+        </ul>
+        {% block section1 %}
+
+        {% endblock %}
+        {% block section2%}
+
+        {% endblock %}
+    </body>
+</html>
